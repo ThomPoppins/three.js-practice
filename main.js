@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import WebGL from 'three/addons/capabilities/WebGL.js';
 
 /* VERSION v0.0.2 code: */
 // initialize a new scene
@@ -67,6 +68,11 @@ function animate() {
   renderer.render(scene, camera);
 }
 
-// call function animate, which will loop on itselve after calling  it once.
-animate();
-
+// Check if browser supports WebGL, otherwise show error message to user
+if (WebGL.isWebGLAvailable()) {
+  // call function animate, which will loop on itselve after calling  it once.
+  animate();
+} else {
+  const warning = WebGL.getWebGLErrorMessage();
+  document.getElementById('container').appendChild(warning);
+}
