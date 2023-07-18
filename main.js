@@ -73,6 +73,7 @@ if (WebGL.isWebGLAvailable()) {
   // call function animate, which will loop on itselve after calling  it once.
   animate();
 } else {
+  // Append error to #web_gl_error div
   const warning = WebGL.getWebGLErrorMessage();
-  document.getElementById('container').appendChild(warning);
+  document.getElementById('web_gl_error').appendChild(warning);
 }
