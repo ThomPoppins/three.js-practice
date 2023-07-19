@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import WebGL from 'three/addons/capabilities/WebGL.js';
 
-/* VERSION v0.0.2 code: */
+/* Version v0.0.3 */
 // initialize a new scene
 const scene = new THREE.Scene();
 
